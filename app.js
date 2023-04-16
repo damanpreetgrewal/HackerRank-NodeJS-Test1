@@ -8,7 +8,6 @@ var recipeRouter = require('./routes/recipes');
 
 var app = express();
 
-// view engine setup
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));

@@ -5,11 +5,10 @@ var recipes = require('../recipes.json');
 router.get('/step/:id', (req, res) => {
   const { id } = req.params;
 
-  // find recipe step
   const recipe = recipes[+id - 1];
 
   if (!recipe) {
-    return res.status(400).send("NOT_FOUND");
+    return res.status(400).send('NOT_FOUND');
   }
 
   let { elapsedTime = '' } = req.query;
@@ -31,9 +30,8 @@ router.get('/step/:id', (req, res) => {
   }, 0);
 
   res.json({
-    index: stepIndex
+    index: stepIndex,
   });
 });
 
 module.exports = router;
-
